@@ -29,7 +29,23 @@ const successDiv = document.getElementById('success-message');
 const bookingsTableBody = document.getElementById('bookings-tbody');
 const insightsContainer = document.getElementById('insights-container');
 
-// ... (utility functions already provided earlier)
+// Populates the dropdown menu with available pods
+function populatePodSelect() {
+  podSelect.innerHTML = '';
+
+  const defaultOption = document.createElement('option');
+  defaultOption.value = '';
+  defaultOption.textContent = 'Choose a study pod...';
+  podSelect.appendChild(defaultOption);
+
+  for (let i = 0; i < pods.length; i++) {
+    const pod = pods[i];
+    const option = document.createElement('option');
+    option.value = pod.id;
+    option.textContent = `${pod.id} (Capacity: ${pod.capacity} students)`;
+    podSelect.appendChild(option);
+  }
+}
 
 // CONTINUING renderBookingsTable()
 function renderBookingsTable() {
