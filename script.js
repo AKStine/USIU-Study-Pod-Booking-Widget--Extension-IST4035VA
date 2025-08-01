@@ -178,6 +178,9 @@ bookingForm.addEventListener('submit', function (e) {
     errorsDiv.classList.remove('show');
     successDiv.classList.remove('show');
 
+    console.log("Submitting booking:", podId, time, studentIds);
+    console.log("Booking array before:", bookings);
+
     const podId = podSelect.value;
     const time = timeInput.value;
     const studentIds = parseStudentIds(studentsInput.value);
